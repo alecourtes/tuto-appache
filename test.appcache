@@ -1,7 +1,18 @@
 CACHE MANIFEST
 #v1
+
+#File that you to cache 
+#Be Careful if page use appcache, all resources needed is request
+# in the appcache, appart if the NETWORK instruction is configured
 CACHE:
 index.html
-css/style.css
-img/reunion.jpg
 
+# All other resources (e.g. sites) require the user to be online. 
+NETWORK:
+*
+
+#Request to return if user is offline
+FALLBACK:
+index.html fallback.html
+img/reunion.jpg img/offline.jpg
+js/script.js js/offline.js
